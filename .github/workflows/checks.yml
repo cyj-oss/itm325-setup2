@@ -1,0 +1,39 @@
+name: Check project setup helpers
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate Windows behavior without changing installed tools
+        shell: powershell
+        run: ./tests-windows.ps1
+  mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate native Bash syntax and Mac behavior without installing tools
+        run: |
+          /bin/bash -n prepare-mac.sh
+          /bin/bash -n tests-mac.sh
+          /bin/bash tests-mac.sh
+      - name: Verify the official Mac installer download and signature
+        run: |
+          check_dir=$(mktemp -d)
+          cd "$check_dir"
+          base=https://nodejs.org/dist/latest-v24.x/
+          curl --fail --silent --show-error --location "${base}SHASUMS256.txt" -o SHASUMS256.txt
+          entry=$(awk '$2 ~ /^node-v24\.[0-9]+\.[0-9]+\.pkg$/ {print $1 " " $2}' SHASUMS256.txt)
+          expected=${entry%% *}
+          package=${entry#* }
+          [[ "$expected" =~ ^[a-f0-9]{64}$ && "$package" =~ ^node-v24\.[0-9]+\.[0-9]+\.pkg$ ]]
+          curl --fail --silent --show-error --location "${base}${package}" -o "$package"
+          actual=$(shasum -a 256 "$package")
+          test "${actual%% *}" = "$expected"
+          pkgutil --check-signature "$package"
