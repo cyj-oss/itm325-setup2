@@ -8,9 +8,9 @@ Keep your existing VS Code and Claude Code installations. Complete these steps i
 
 | Step | Open this guide | Finish when |
 | --- | --- | --- |
-| 1. Check Git and install Node.js | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Git, Node.js, and npm print version numbers |
-| 2. Prepare the editor | **[VS Code extensions](EDITOR.md)** | ESLint and Prettier are installed |
-| 3. Connect GitHub | **[GitHub account and connection](GITHUB.md)** | Your course project and a commit appear in your GitHub account |
+| 1. Run the setup helper | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Git, Node.js, npm, ESLint, and Prettier are ready |
+| 2. Finish the editor settings | **[Editor settings](EDITOR.md)** | Prettier is selected and Format On Save is enabled |
+| 3. Prepare GitHub | **[GitHub account and connection](GITHUB.md)** | Your account and Git identity are ready; publish when you have a course project |
 
 **Git** records changes on your computer. **GitHub** stores your project and its history online. GitHub account setup happens in Part 2, even if Git was installed earlier.
 
@@ -24,6 +24,6 @@ Create a Supabase account and cloud project, then prepare your app's connection.
 
 ## Already set up?
 
-Start with each guide's checks. Keep working tools, accounts, projects, and connections. Install or configure only what is missing.
+The helpers skip supported working tools. Keep existing accounts, projects, and connections. GitHub and Supabase sign-in happen in the browser.
 
 [Setup help](HELP.md) · [First setup: VS Code and Claude Code](https://github.com/cyj-oss/itm325-setup)

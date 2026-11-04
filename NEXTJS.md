@@ -4,7 +4,7 @@
 
 Use this page when the lesson asks you to create **Ohana Link**. Finish the Windows or Mac tool checks first.
 
-**Already created the app?** Open its existing folder and go to Step 2. Do not create another app over your work.
+**Already created the app, or already have an ohana-link folder?** Open that folder and inspect it first. If it contains your app and package.json, go to Step 2. Keep existing work.
 
 ## 1. Create the app
 
@@ -27,8 +27,6 @@ npx create-next-app@latest ohana-link
 Approve the download of **create-next-app** when prompted. Choose the recommended defaults with **TypeScript, ESLint, Tailwind CSS, and App Router**. Wait for the success message.
 
 This installs Next.js, React, and the app's other packages inside the new project. They are not separate desktop applications.
-
-If a folder named **ohana-link** already exists, open that folder and inspect it before proceeding. Keep existing work.
 
 ## 2. Run the app
 

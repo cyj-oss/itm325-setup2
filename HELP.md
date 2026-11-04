@@ -22,12 +22,32 @@ For example, run `npm.cmd run dev`. Changing PowerShell's execution policy is no
 
 ## Node.js version or installation problems
 
-- **Both checks work and your Node major version is still labeled LTS:** Keep it.
+- **The helper prints KEEP for Node and npm:** Keep them. No reinstall is needed.
+- **The helper does not recognize your Node version:** It checks Node 22, 24, and 26 against their LTS support dates. Compare your release with the [official Node.js releases](https://nodejs.org/en/about/previous-releases). Ask for help with a newer supported release before replacing it.
 - **You use nvm, fnm, Volta, or Homebrew to manage Node:** Keep using that method to select or install a supported LTS version. Do not add the standalone installer on top of it. Ask for help if you are unsure which method you have.
 - **You previously used the official Node installer:** Use the official LTS installer to update or repair that installation, then reopen VS Code and check Node and npm again.
 - **Only one check works, or you do not know how Node was installed:** Ask for help before removing or adding tools.
 
 Do not use administrator mode or `sudo npm install` to work around a project package error. Use a course folder owned by your normal account.
+
+## Install Node manually
+
+Use this only if the helper cannot finish and you do not use a Node version manager.
+
+1. Open the [official Node.js download page](https://nodejs.org/en/download) and select **Node.js 24 LTS**.
+2. Choose **Windows Installer (.msi)** or **macOS Installer (.pkg)**. On Windows, match the architecture in **Settings > System > About > System type**: usually x64, or ARM64 for an ARM computer.
+3. Complete the installer. On Windows, keep npm and Add to PATH selected; leave additional Tools for Native Modules unchecked.
+4. Reopen VS Code and a new terminal. Run the helper again to verify the result and finish the extensions.
+
+## Install Git manually on Windows
+
+1. Open the [official Git for Windows page](https://git-scm.com/install/windows) and download the installer for your system type.
+2. Complete the installer. Choose VS Code as the editor if asked. Keep Git available from the command line and third-party software.
+3. Reopen VS Code and a new terminal. Run the helper again.
+
+## Install extensions manually
+
+Open **View > Extensions** in VS Code. Install **ESLint** by **Microsoft** and **Prettier - Code formatter** by **Prettier**. Keep either one that is already installed. Then complete [the editor settings](EDITOR.md).
 
 ## Mac Git does not start
 
