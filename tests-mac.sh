@@ -18,7 +18,6 @@ node_supported v24.1.0-beta 2026-11-04; assert_status 1 $? 'reject prerelease No
 scratch=$(mktemp -d) || exit 1
 reset_scenario() {
     missing_node=0; missing_npm=0; missing_git=0; broken_node=0; fixture_version=v24.1.0
-    printf 'dbaeumer.vscode-eslint\nesbenp.prettier-vscode\n' > "$scratch/extensions"
     : > "$scratch/installs"
 }
 uname() { printf 'Darwin\n'; }
@@ -39,8 +38,8 @@ read_version() {
         /mock/npm) printf '11.1.0\n' ;;
     esac
 }
-list_extensions() { cat "$scratch/extensions"; }
-install_extension() { printf '%s\n' "$2" >> "$scratch/extensions"; printf 'extension\n' >> "$scratch/installs"; }
+list_extensions() { printf 'Unexpected extension inspection\n' >&2; return 1; }
+install_extension() { printf 'Unexpected extension install\n' >&2; return 1; }
 open_node_installer() { printf 'node\n' >> "$scratch/installs"; return 2; }
 
 reset_scenario
@@ -57,9 +56,7 @@ reset_scenario; fixture_version=v20.1.0
 project_setup; assert_status 1 $? 'unsupported Node stops setup'
 [ ! -s "$scratch/installs" ]; assert_status 0 $? 'unsupported Node is not overwritten'
 reset_scenario
-printf 'dbaeumer.vscode-eslint\n' > "$scratch/extensions"
-project_setup; assert_status 0 $? 'missing extension is installed'
-[ "$(wc -l < "$scratch/installs" | tr -d ' ')" -eq 1 ]; assert_status 0 $? 'only one extension install'
-project_setup; assert_status 0 $? 'rerun succeeds'
-[ "$(wc -l < "$scratch/installs" | tr -d ' ')" -eq 1 ]; assert_status 0 $? 'rerun does not reinstall'
+project_setup --check; assert_status 0 $? 'check-only succeeds without accessing extensions'
+project_setup; assert_status 0 $? 'rerun succeeds without accessing extensions'
+[ ! -s "$scratch/installs" ]; assert_status 0 $? 'rerun does not install anything'
 printf '%s Mac behavior checks passed.\n' "$passed"
