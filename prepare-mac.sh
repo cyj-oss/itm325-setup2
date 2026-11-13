@@ -72,27 +72,21 @@ open_node_installer() {
     return 2
 }
 
-list_extensions() { "$1" --list-extensions 2>/dev/null; }
 confirm_setup() {
     local answer
     printf 'Type Y to continue, or press Return to stop: '
     read -r answer < /dev/tty || return 1
     case "$answer" in y|Y|yes|YES|Yes) return 0 ;; *) return 1 ;; esac
 }
-install_extension() {
-    printf 'Installing missing extension: %s\n' "$2"
-    "$1" --install-extension "$2" >/dev/null 2>&1
-}
-
 project_setup() {
-    local check_only=0 code git node npm version npm_version installed id answer result
+    local check_only=0 code git node npm version npm_version
     case "${1:-}" in --check) check_only=1 ;; '') ;; *) printf 'Usage: bash prepare-mac.sh [--check]\n'; return 1 ;; esac
     [ "$(uname -s)" = Darwin ] || { printf 'Use this helper on a Mac.\n'; return 1; }
     [ "$(id -u)" -ne 0 ] || { printf 'Run this helper without sudo.\n'; return 1; }
     code=$(find_tool code) || { printf 'VS Code was not found. Complete the first setup or use Setup Help.\n'; return 1; }
     printf 'ITM 325 | Project tools\n'
     if [ "$check_only" -eq 0 ]; then
-        printf 'Keep working tools. Install only missing Git, Node.js, ESLint, and Prettier.\n'
+        printf 'Keep working tools. Install only missing Git and Node.js, including npm.\n'
         confirm_setup || { printf 'Stopped. No installation changes were made.\n'; return 3; }
     fi
     git=$(find_tool git) || git=''
@@ -122,16 +116,6 @@ project_setup() {
     npm_version=$(read_version "$npm") || { printf 'npm did not start. Use Setup Help.\n'; return 1; }
     [[ "$npm_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]] || { printf 'Unexpected npm result. Use Setup Help.\n'; return 1; }
     printf 'KEEP: Node %s and npm %s\n' "$version" "$npm_version"
-    installed=$(list_extensions "$code") || { printf 'VS Code could not list extensions. Use Setup Help.\n'; return 1; }
-    for id in dbaeumer.vscode-eslint esbenp.prettier-vscode; do
-        if printf '%s\n' "$installed" | /usr/bin/grep -Fxiq "$id"; then printf 'KEEP: %s\n' "$id"
-        elif [ "$check_only" -eq 1 ]; then printf 'Missing extension: %s\n' "$id"; return 1
-        else install_extension "$code" "$id" || { printf 'Extension installation needs attention. Use Setup Help.\n'; return 1; }; fi
-    done
-    installed=$(list_extensions "$code") || return 1
-    for id in dbaeumer.vscode-eslint esbenp.prettier-vscode; do
-        printf '%s\n' "$installed" | /usr/bin/grep -Fxiq "$id" || { printf 'An extension was not found after installation.\n'; return 1; }
-    done
     printf 'PROJECT TOOLS READY\nQuit VS Code with Command Q, reopen it, and use a new terminal for the guide\047s final checks.\n'
     return 0
 }
