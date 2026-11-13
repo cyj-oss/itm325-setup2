@@ -12,7 +12,7 @@ Copy this entire command, paste it into PowerShell, and press **Enter**.
 & ([scriptblock]::Create((Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/cyj-oss/itm325-setup2/main/prepare-windows.ps1')))
 ```
 
-Type **Y** to continue. The helper checks Git, Node.js, npm, ESLint, and Prettier. It keeps supported working installations and installs missing tools.
+Type **Y** to continue. The helper checks Git, Node.js, and npm. It keeps supported working installations and installs missing tools.
 
 If the Node installer opens, complete it. Keep **npm** and **Add to PATH** selected. Leave **Tools for Native Modules** unchecked if offered. Review any Windows permission prompt.
 
@@ -34,4 +34,4 @@ npm.cmd --version
 
 **Done:** All three print version numbers. If a command is not recognized, use [command help](HELP.md#a-command-is-not-recognized) before reinstalling.
 
-**Next: [Finish the editor settings](EDITOR.md)**
+**Next: [GitHub account and connection](GITHUB.md)**
