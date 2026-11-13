@@ -37,17 +37,13 @@ Use this only if the helper cannot finish and you do not use a Node version mana
 1. Open the [official Node.js download page](https://nodejs.org/en/download) and select **Node.js 24 LTS**.
 2. Choose **Windows Installer (.msi)** or **macOS Installer (.pkg)**. On Windows, match the architecture in **Settings > System > About > System type**: usually x64, or ARM64 for an ARM computer.
 3. Complete the installer. On Windows, keep npm and Add to PATH selected; leave additional Tools for Native Modules unchecked.
-4. Reopen VS Code and a new terminal. Run the helper again to verify the result and finish the extensions.
+4. Reopen VS Code and a new terminal. Run the helper again to verify the result.
 
 ## Install Git manually on Windows
 
 1. Open the [official Git for Windows page](https://git-scm.com/install/windows) and download the installer for your system type.
 2. Complete the installer. Choose VS Code as the editor if asked. Keep Git available from the command line and third-party software.
 3. Reopen VS Code and a new terminal. Run the helper again.
-
-## Install extensions manually
-
-Open **View > Extensions** in VS Code. Install **ESLint** by **Microsoft** and **Prettier - Code formatter** by **Prettier**. Keep either one that is already installed. Then complete [the editor settings](EDITOR.md).
 
 ## Mac Git does not start
 
