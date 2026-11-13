@@ -8,9 +8,8 @@ Keep your existing VS Code and Claude Code installations. Complete these steps i
 
 | Step | Open this guide | Finish when |
 | --- | --- | --- |
-| 1. Run the setup helper | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Git, Node.js, npm, ESLint, and Prettier are ready |
-| 2. Finish the editor settings | **[Editor settings](EDITOR.md)** | Prettier is selected and Format On Save is enabled |
-| 3. Prepare GitHub | **[GitHub account and connection](GITHUB.md)** | Your account and Git identity are ready; publish when you have a course project |
+| 1. Run the setup helper | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Git, Node.js, and npm are ready |
+| 2. Prepare GitHub | **[GitHub account and connection](GITHUB.md)** | Your account and Git identity are ready; publish when you have a course project |
 
 **Git** records changes on your computer. **GitHub** stores your project and its history online. GitHub account setup happens in Part 2, even if Git was installed earlier.
 
