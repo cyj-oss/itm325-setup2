@@ -81,18 +81,6 @@ function Install-MissingNode {
     if ($process.ExitCode -ne 0) { throw 'The Node installer did not finish. Rerun this helper after resolving the installer message.' }
 }
 
-function Get-CourseExtensions([string]$Code) {
-    $items = @(& $Code --list-extensions 2>$null)
-    if ($LASTEXITCODE -ne 0) { throw 'VS Code could not list extensions. Use the manual extension steps in Setup Help.' }
-    return $items
-}
-
-function Install-CourseExtension([string]$Code, [string]$Id) {
-    Write-Host "Installing missing extension: $Id"
-    $details = @(& $Code --install-extension $Id 2>&1)
-    if ($LASTEXITCODE -ne 0) { throw 'An extension could not be installed. Use the manual extension steps in Setup Help.' }
-}
-
 function Invoke-ProjectSetup([switch]$CheckOnly) {
     $savedPreference = $ErrorActionPreference
     $savedProgress = $ProgressPreference
@@ -106,7 +94,7 @@ function Invoke-ProjectSetup([switch]$CheckOnly) {
         if (-not $code) { throw 'VS Code was not found. Complete the first setup or use Setup Help for a custom installation.' }
         Write-Host 'ITM 325 | Project tools'
         if (-not $CheckOnly) {
-            Write-Host 'Keep working tools. Install only missing Git, Node.js, ESLint, and Prettier.'
+            Write-Host 'Keep working tools. Install only missing Git and Node.js, including npm.'
             $answer = Read-Host 'Type Y to continue, or press Enter to stop'
             if ($answer -notmatch '^(?i)y(es)?$') { Write-Host 'Stopped. No installation changes were made.'; return 3 }
         }
@@ -137,16 +125,6 @@ function Invoke-ProjectSetup([switch]$CheckOnly) {
         $npmVersion = Read-CourseVersion $npm
         if ($npmVersion -notmatch '^\d+\.\d+\.\d+') { throw 'npm returned an unexpected version. Use Setup Help.' }
         Write-Host "KEEP: Node $nodeVersion and npm $npmVersion"
-        $installed = @(Get-CourseExtensions $code)
-        foreach ($id in @('dbaeumer.vscode-eslint','esbenp.prettier-vscode')) {
-            if ($installed -contains $id) { Write-Host "KEEP: $id" }
-            elseif ($CheckOnly) { throw "Missing extension: $id" }
-            else { Install-CourseExtension $code $id }
-        }
-        $verified = @(Get-CourseExtensions $code)
-        foreach ($id in @('dbaeumer.vscode-eslint','esbenp.prettier-vscode')) {
-            if ($verified -notcontains $id) { throw 'An extension was not found after installation. Use Setup Help.' }
-        }
         Write-Host 'PROJECT TOOLS READY'
         Write-Host 'Reopen all VS Code windows and use a new terminal for the final checks in the guide.'
         return 0
