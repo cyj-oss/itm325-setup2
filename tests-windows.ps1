@@ -16,7 +16,6 @@ Assert-Test (-not (Test-CourseNode 'v24.1.0-beta' ([datetime]'2026-11-04'))) 'pr
 function Reset-Scenario {
     $script:missingNode=$false; $script:missingGit=$false; $script:missingNpm=$false
     $script:brokenNode=$false; $script:version='v24.1.0'; $script:installs=0
-    $script:extensions=@('dbaeumer.vscode-eslint','esbenp.prettier-vscode')
 }
 function Find-CourseTool([string]$Name) {
     if ($Name -eq 'node.exe' -and $script:missingNode) { return $null }
@@ -34,8 +33,8 @@ function Read-CourseVersion([string]$File) {
 function Read-Host { return 'Y' }
 function Install-MissingNode { $script:installs++; $script:missingNode=$false; $script:missingNpm=$false }
 function Install-MissingGit { $script:installs++; $script:missingGit=$false }
-function Get-CourseExtensions { return $script:extensions }
-function Install-CourseExtension([string]$Code,[string]$Id) { $script:installs++; $script:extensions+= $Id }
+function Get-CourseExtensions { throw 'Extension inspection must not run' }
+function Install-CourseExtension { throw 'Extension installation must not run' }
 
 Reset-Scenario
 $result=Invoke-ProjectSetup
@@ -55,13 +54,10 @@ Assert-Test ($result -eq 1 -and $script:installs -eq 0) 'broken existing Node is
 Reset-Scenario; $script:version='v20.1.0'
 $result=Invoke-ProjectSetup
 Assert-Test ($result -eq 1 -and $script:installs -eq 0) 'unsupported Node is not overwritten'
-Reset-Scenario; $script:extensions=@('dbaeumer.vscode-eslint')
-$result=Invoke-ProjectSetup
-Assert-Test ($result -eq 0 -and $script:installs -eq 1) 'only the missing extension is installed'
-$result=Invoke-ProjectSetup
-Assert-Test ($result -eq 0 -and $script:installs -eq 1) 'rerunning does not reinstall extensions'
-Reset-Scenario; $script:extensions=@()
+Reset-Scenario
 $result=Invoke-ProjectSetup -CheckOnly
-Assert-Test ($result -eq 1 -and $script:installs -eq 0) 'check-only does not install extensions'
+Assert-Test ($result -eq 0 -and $script:installs -eq 0) 'check-only succeeds without accessing extensions'
+$result=Invoke-ProjectSetup
+Assert-Test ($result -eq 0 -and $script:installs -eq 0) 'rerunning does not access or install extensions'
 Write-Host "$script:passed Windows behavior checks passed."
 exit 0
