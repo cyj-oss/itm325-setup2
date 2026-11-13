@@ -12,7 +12,7 @@ Copy this entire command, paste it into Terminal, and press **Return**.
 course_setup="$(/usr/bin/mktemp /tmp/itm325-project.XXXXXX)" && /usr/bin/curl --fail --show-error --location --proto '=https' https://raw.githubusercontent.com/cyj-oss/itm325-setup2/main/prepare-mac.sh --output "$course_setup" && /bin/bash "$course_setup"
 ```
 
-Type **Y** to continue. The helper checks Git, Node.js, npm, ESLint, and Prettier. It keeps supported working installations and prepares missing tools.
+Type **Y** to continue. The helper checks Git, Node.js, and npm. It keeps supported working installations and prepares missing tools.
 
 | Message | What to do |
 | --- | --- |
@@ -39,4 +39,4 @@ npm --version
 
 **Done:** All three print version numbers. If a command is not found, use [command help](HELP.md#a-command-is-not-recognized) before reinstalling.
 
-**Next: [Finish the editor settings](EDITOR.md)**
+**Next: [GitHub account and connection](GITHUB.md)**
