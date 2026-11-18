@@ -1,8 +1,10 @@
-# Part 2 | Windows
+# Part 2 | Node.js and npm on Windows
 
 [Back to start](README.md)
 
-## 1. Run the setup helper
+Use this page in the Next.js lesson. Node.js runs JavaScript outside the browser, and npm manages project packages. The helper prepares these tools; it does not create a Next.js app.
+
+## 1. Prepare Node.js and npm
 
 Open **Windows PowerShell** from Start. Use the entry without **x86** and open it normally.
 
@@ -12,7 +14,7 @@ Copy this entire command, paste it into PowerShell, and press **Enter**.
 & ([scriptblock]::Create((Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/cyj-oss/itm325-setup2/main/prepare-windows.ps1')))
 ```
 
-Type **Y** to continue. The helper checks Git, Node.js, and npm. It keeps supported working installations and installs missing tools.
+Type **Y** to continue. The helper checks Git, Node.js, and npm. It keeps supported working installations and installs missing tools. Git from the first course setup is kept if it works.
 
 If the Node installer opens, complete it. Keep **npm** and **Add to PATH** selected. Leave **Tools for Native Modules** unchecked if offered. Review any Windows permission prompt.
 
@@ -34,4 +36,4 @@ npm.cmd --version
 
 **Done:** All three print version numbers. If a command is not recognized, use [command help](HELP.md#a-command-is-not-recognized) before reinstalling.
 
-**Next: [GitHub account and connection](GITHUB.md)**
+**Next: [Create and run the Next.js app](NEXTJS.md)**
