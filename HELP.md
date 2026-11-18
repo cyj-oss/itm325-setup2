@@ -43,7 +43,7 @@ Use this only if the helper cannot finish and you do not use a Node version mana
 
 1. Open the [official Git for Windows page](https://git-scm.com/install/windows) and download the installer for your system type.
 2. Complete the installer. Choose VS Code as the editor if asked. Keep Git available from the command line and third-party software.
-3. Reopen VS Code and a new terminal. Run the helper again.
+3. Reopen VS Code and a new terminal. Run `git --version`. When a version appears, continue with [GitHub account setup](GITHUB.md#2-create-or-use-your-github-account).
 
 ## Mac Git does not start
 
