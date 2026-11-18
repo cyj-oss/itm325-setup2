@@ -12,14 +12,13 @@ Check Git, prepare your GitHub account, and connect your course project. Windows
 
 ## Part 2 · Node.js and Next.js Setup
 
-Use this part in the Next.js lesson. Complete these steps in order.
+Open **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** and follow all three steps on that page.
 
-| Step | Open this guide | Finish when |
-| --- | --- | --- |
-| 1. Prepare Node.js and npm | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Node.js and npm work; existing Git is kept |
-| 2. Create and run the app | **[Next.js app](NEXTJS.md)** | Your app opens in the browser |
+1. Prepare Node.js and npm.
+2. Create the Next.js app.
+3. Run the app.
 
-The setup helper prepares the tools. Next.js is installed inside the project when you create the app in Step 2. Keep an existing app if you already created it.
+The setup helper prepares the tools. You then enter the app commands one at a time in your existing course folder. If you already created the app, keep it and skip the creation command.
 
 ## Part 3 · Supabase Setup
 
