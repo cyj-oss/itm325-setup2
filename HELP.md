@@ -87,7 +87,7 @@ If a generated folder such as node_modules was already committed, ask for help b
 ## The app does not run
 
 - **package.json not found:** Open the actual app folder, then open a new terminal.
-- **Missing packages:** Follow the restore-packages step in [the Next.js guide](NEXTJS.md#2-run-the-app).
+- **Missing packages:** Follow the restore-packages step for [Windows](WINDOWS.md#existing-app-with-missing-packages) or [Mac](MAC.md#existing-app-with-missing-packages).
 - **Port 3000 is in use:** Open the Local address printed by the current terminal. It may use another port.
 
 ## Supabase setup or data access fails
