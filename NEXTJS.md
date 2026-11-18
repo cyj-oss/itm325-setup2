@@ -1,8 +1,8 @@
-# Create and Run the Next.js App
+# Part 2 | Create and Run the Next.js App
 
 [Back to start](README.md)
 
-Use this page when the lesson asks you to create **Ohana Link**. Finish the Windows or Mac tool checks first.
+Use this page when the lesson asks you to create **Ohana Link**. First prepare Node.js and npm using the **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** guide in Part 2.
 
 **Already created the app, or already have an ohana-link folder?** Open that folder and inspect it first. If it contains your app and package.json, go to Step 2. Keep existing work.
 
@@ -50,6 +50,6 @@ Open the **Local** address printed in the terminal, usually **http://localhost:3
 
 **Done:** The app opens in your browser without an error. If another port is printed, use that address.
 
-Continue with the lesson. Use [GitHub connection](GITHUB.md#3-open-your-course-project) when you are ready to publish this project.
+Continue with the lesson. Use [GitHub connection](GITHUB.md#4-open-your-course-project) when you are ready to publish this project. Open **ohana-link** as the project folder for that step.
 
 [Need help?](HELP.md) · [Official Next.js installation guide](https://nextjs.org/docs/app/getting-started/installation)
