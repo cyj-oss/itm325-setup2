@@ -1,8 +1,10 @@
-# Part 2 | Mac
+# Part 2 | Node.js and npm on Mac
 
 [Back to start](README.md)
 
-## 1. Run the setup helper
+Use this page in the Next.js lesson. Node.js runs JavaScript outside the browser, and npm manages project packages. The helper prepares these tools; it does not create a Next.js app.
+
+## 1. Prepare Node.js and npm
 
 Press **Command+Space**, type **Terminal**, and press Return.
 
@@ -39,4 +41,4 @@ npm --version
 
 **Done:** All three print version numbers. If a command is not found, use [command help](HELP.md#a-command-is-not-recognized) before reinstalling.
 
-**Next: [GitHub account and connection](GITHUB.md)**
+**Next: [Create and run the Next.js app](NEXTJS.md)**
