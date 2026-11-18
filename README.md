@@ -6,7 +6,7 @@ Complete only the part assigned in Lamaku. Keep your existing VS Code and Claude
 
 Open **[GitHub account and connection](GITHUB.md)** for the Git and GitHub lesson.
 
-Check Git, prepare your GitHub account, and connect your course project. Windows students who completed the first setup already have Git; check its version instead of reinstalling it. The guide includes Mac instructions if Git is missing.
+Check Git and prepare your GitHub account. Windows students who completed the first setup already have Git; check its version instead of reinstalling it. The guide includes Mac instructions if Git is missing.
 
 **Git** records changes on your computer. **GitHub** stores your project and its history online. GitHub is an online service; no GitHub Desktop installation is required. Node.js is not needed for this part.
 
