@@ -122,4 +122,4 @@ npm.cmd install
 
 Then run `npm.cmd run dev`.
 
-[Setup help](HELP.md) · [Publish the app to GitHub when assigned](GITHUB.md#4-open-your-course-project) · [Official Next.js instructions](https://nextjs.org/docs/app/getting-started/installation)
+[Setup help](HELP.md) · [Official Next.js instructions](https://nextjs.org/docs/app/getting-started/installation)
