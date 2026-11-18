@@ -1,21 +1,27 @@
-# ITM 325 | Project and Database Setup
+# ITM 325 | GitHub, Next.js, and Supabase Setup
 
-Use the section assigned in Lamaku. Project setup and database setup happen in separate lessons.
+Complete only the part assigned in Lamaku. Keep your existing VS Code and Claude Code installations.
 
-## Part 2 · Project setup
+## Part 1 · GitHub Account and Connection
 
-Keep your existing VS Code and Claude Code installations. Complete these steps in order.
+Open **[GitHub account and connection](GITHUB.md)** for the Git and GitHub lesson.
+
+Check Git, prepare your GitHub account, and connect your course project. Windows students who completed the first setup already have Git; check its version instead of reinstalling it. The guide includes Mac instructions if Git is missing.
+
+**Git** records changes on your computer. **GitHub** stores your project and its history online. GitHub is an online service; no GitHub Desktop installation is required. Node.js is not needed for this part.
+
+## Part 2 · Node.js and Next.js Setup
+
+Use this part in the Next.js lesson. Complete these steps in order.
 
 | Step | Open this guide | Finish when |
 | --- | --- | --- |
-| 1. Run the setup helper | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Git, Node.js, and npm are ready |
-| 2. Prepare GitHub | **[GitHub account and connection](GITHUB.md)** | Your account and Git identity are ready; publish when you have a course project |
+| 1. Prepare Node.js and npm | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Node.js and npm work; existing Git is kept |
+| 2. Create and run the app | **[Next.js app](NEXTJS.md)** | Your app opens in the browser |
 
-**Git** records changes on your computer. **GitHub** stores your project and its history online. GitHub account setup happens in Part 2, even if Git was installed earlier.
+The setup helper prepares the tools. Next.js is installed inside the project when you create the app in Step 2. Keep an existing app if you already created it.
 
-When the lesson asks you to create the Ohana Link app, use **[Create and run the Next.js app](NEXTJS.md)**. Keep an existing project if you already made it.
-
-## Part 3 · Database setup
+## Part 3 · Supabase Setup
 
 Open **[Supabase setup](SUPABASE.md)** when you reach the database lesson and have a working Next.js app.
 
