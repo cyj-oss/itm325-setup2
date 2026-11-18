@@ -1,10 +1,30 @@
-# Part 2 | GitHub Account and Connection
+# Part 1 | GitHub Account and Connection
 
 [Back to start](README.md)
 
-Git should already work in your VS Code terminal. **GitHub is an online service.** You do not need to install GitHub Desktop or buy GitHub Copilot for these steps.
+Use this page in the Git and GitHub lesson. **GitHub is an online service.** You do not need GitHub Desktop, GitHub Copilot, or Node.js for these steps.
 
-## 1. Create or use your GitHub account
+## 1. Check Git
+
+Open **Terminal > New Terminal** in VS Code. Run this in the regular terminal, outside Claude's message area:
+
+```text
+git --version
+```
+
+**If a Git version appears, keep the installation and continue to Step 2.**
+
+**Windows:** Git was included in the first course setup. If the command is not recognized, follow [command help](HELP.md#a-command-is-not-recognized) first. Install Git using the [Windows instructions](HELP.md#install-git-manually-on-windows) only if it is missing.
+
+**Mac:** If Apple opens a Command Line Tools installer, complete it. If Git is missing and no installer opens, run:
+
+```bash
+xcode-select --install
+```
+
+Complete the Apple installer, quit VS Code with **Command+Q**, and reopen it with a new terminal. Run `git --version` again. The full Xcode app and Homebrew are not required. If the tools are already installed but Git fails, use [Mac Git help](HELP.md#mac-git-does-not-start).
+
+## 2. Create or use your GitHub account
 
 1. Open [GitHub](https://github.com/).
 2. Sign in to your existing account, or select **Sign up** and create a free account.
@@ -12,7 +32,7 @@ Git should already work in your VS Code terminal. **GitHub is an online service.
 
 **Check:** Your profile menu shows the account you will use for class.
 
-## 2. Check your Git name and email
+## 3. Check your Git name and email
 
 In a regular VS Code terminal, run:
 
@@ -32,15 +52,15 @@ Use an email verified in GitHub, or copy your GitHub-provided **noreply** addres
 
 Run the two checks again. If they still show someone else's details, see [Git identity help](HELP.md#git-shows-the-wrong-name-or-email).
 
-## 3. Open your course project
+## 4. Open your course project
 
-Choose **File > Open Folder** in VS Code and open the actual project folder. For Ohana Link, this is **ohana-link**, not the parent **webdev** folder.
+Choose **File > Open Folder** in VS Code and open the actual project folder, such as **2.pomodoro**. Open the project itself, not the parent **webdev** folder.
 
-If you have not created a project yet, your account preparation is complete. Return to this step when the lesson asks you to publish a project. For the Next.js lesson, use [Create and run the Next.js app](NEXTJS.md).
+If you have not created a project yet, your account preparation is complete. Return to this step when the lesson asks you to publish a project.
 
-If your project is already connected to your GitHub account, keep the connection and go to Step 5.
+If your project is already connected to your GitHub account, keep the connection and go to Step 6.
 
-## 4. Commit and publish
+## 5. Commit and publish
 
 1. Open **View > Source Control**. Select **Initialize Repository** only if the project is not already a Git repository.
 2. Check the **.gitignore** file in your project. Keep its existing contents and add any missing entries below. Create the file if it does not exist.
@@ -59,7 +79,7 @@ If your project is already connected to your GitHub account, keep the connection
 
 You do not need to create an empty repository on the GitHub website first. Publishing from VS Code creates it in your account.
 
-## 5. Check the result
+## 6. Check the result
 
 Open your GitHub profile menu, select **Your repositories**, and open the project.
 
