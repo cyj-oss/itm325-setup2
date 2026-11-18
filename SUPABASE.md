@@ -9,7 +9,7 @@ Supabase hosts the database online. This setup does not require a local database
 ## 1. Sign in and create a project
 
 1. Open [Supabase](https://supabase.com/) and select **Start your project**.
-2. Use your existing account, or sign up. You can use the GitHub account you prepared in Part 2.
+2. Use your existing account, or sign up. You can use the GitHub account you prepared in Part 1.
 3. Create an organization with the **Free** plan, or select your existing free organization.
 4. Create a project named **ohana-link**, or open the project you already created for this app.
 5. Generate a database password and save it in your password manager. Choose an available **West US** region for the Hawaii course.
