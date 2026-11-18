@@ -37,3 +37,17 @@ jobs:
           actual=$(shasum -a 256 "$package")
           test "${actual%% *}" = "$expected"
           pkgutil --check-signature "$package"
+  nextjs-folder:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verify course folder selection without installing an app
+        run: node --test tests-nextjs.cjs
