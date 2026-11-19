@@ -2,7 +2,9 @@
 
 [Back to start](README.md)
 
-**Finish all 3 steps. Stop when your app opens in your browser.**
+**Using this guide on its own?** Finish all 3 steps. Stop when your app opens in your browser.
+
+**Following the interactive book?** Complete **Step 1 and its version checks only**, then return to [Lesson 6.4](https://cyj-oss.github.io/itm325-vibecoding/#lesson=6.4&step=0) to create and run the app.
 
 ## 1. Prepare Node.js and npm
 
@@ -50,7 +52,9 @@ node --version
 npm --version
 ```
 
-> **CHECK 1 — All three print version numbers. Continue to Step 2.**
+> **CHECK 1 — All three print version numbers.**
+>
+> **Interactive book:** return to [Lesson 6.4](https://cyj-oss.github.io/itm325-vibecoding/#lesson=6.4&step=0). **Using only this guide:** continue to Step 2.
 
 If any command fails, use [command help](HELP.md#a-command-is-not-recognized).
 
