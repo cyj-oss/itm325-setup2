@@ -78,10 +78,16 @@ Run the **two check commands above again**. If they still show different values,
 >
 > **Stop here for Part 1.** GitHub authorization happens when you publish or push in the lesson.
 
+[![Return to book — Lesson 5.4, Step 1](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/return-to-book.svg)](https://cyj-oss.github.io/itm325-vibecoding/#lesson=5.4&step=0)
+
 <details>
 <summary>VS Code says to configure user.name and user.email</summary>
 
 Complete Step 3, then try **Commit** again. These settings identify the author of your commits; they do not sign you in to GitHub. You do not need GitHub Desktop, GitHub Copilot, or Node.js for Part 1.
+
+**Returning to your commit in Lesson 5.4, Step 2?**
+
+[![Return to book — Lesson 5.4, Step 2](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/return-to-book.svg)](https://cyj-oss.github.io/itm325-vibecoding/#lesson=5.4&step=1)
 
 </details>
 
