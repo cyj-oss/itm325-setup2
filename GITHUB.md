@@ -2,66 +2,87 @@
 
 [Back to start](README.md)
 
-Use this page in the Git and GitHub lesson. **GitHub is an online service.** You do not need GitHub Desktop, GitHub Copilot, or Node.js for these steps.
+**Finish Steps 1–3. Windows and Mac use this same page.**
 
 ## 1. Check Git
 
-Open **Terminal > New Terminal** in VS Code. Run this in the regular terminal, outside Claude's message area:
+**Where: VS Code → Terminal → New Terminal**  
+Use **PowerShell on Windows** or **Zsh/Bash on Mac**, outside Claude's message area.
+
+Paste and press **Enter** (Windows) or **Return** (Mac):
 
 ```text
 git --version
 ```
 
-**If a Git version appears, keep the installation and continue to Step 2.**
+> **CHECK 1 — A Git version appears. Continue to Step 2.**
 
-**Windows:** Git was included in the first course setup. If the command is not recognized, follow [command help](HELP.md#a-command-is-not-recognized) first. Install Git using the [Windows instructions](HELP.md#install-git-manually-on-windows) only if it is missing.
+<details>
+<summary>Windows: Git is not recognized</summary>
 
-**Mac:** If Apple opens a Command Line Tools installer, complete it. If Git is missing and no installer opens, run:
+The first course setup included Git. Try [command help](HELP.md#a-command-is-not-recognized) first. Use the [Windows Git installer instructions](HELP.md#install-git-manually-on-windows) only if Git is missing.
+
+</details>
+
+<details>
+<summary>Mac: Git is missing or Apple opens an installer</summary>
+
+Complete the Apple **Command Line Tools** installer if it appears. If Git is missing and no installer opens, run this in the **VS Code terminal**:
 
 ```bash
 xcode-select --install
 ```
 
-Complete the Apple installer, quit VS Code with **Command+Q**, and reopen it with a new terminal. Run `git --version` again. The full Xcode app and Homebrew are not required. If the tools are already installed but Git fails, use [Mac Git help](HELP.md#mac-git-does-not-start).
+Finish installation. Quit VS Code with **Command+Q**, reopen it, and create a new terminal. Repeat the Git version check. The full Xcode app and Homebrew are not required. If the tools are installed but Git fails, use [Mac Git help](HELP.md#mac-git-does-not-start).
+
+</details>
 
 ## 2. Create or use your GitHub account
 
-1. Open [GitHub](https://github.com/).
-2. Sign in to your existing account, or select **Sign up** and create a free account.
-3. Complete email verification and any sign-in steps GitHub requests.
+**Where: Your browser**
 
-**Check:** Your profile menu shows the account you will use for class.
+1. Open [GitHub](https://github.com/).
+2. **Sign in**, or **Sign up** for a free account.
+3. Complete email verification and any requested sign-in steps.
+
+> **CHECK 2 — Your profile menu shows your class account. Continue to Step 3.**
 
 ## 3. Set your Git name and email
 
-Complete this before your first commit. **Windows and Mac use the same commands.** In VS Code, open **Terminal > New Terminal** and run each command separately in the regular terminal.
+**Where: The VS Code terminal, outside Claude**  
+Windows and Mac use the same commands.
 
-Check your current settings:
+**Check first. Copy both lines together:**
 
 ```text
 git config --get user.name
-```
-
-```text
 git config --get user.email
 ```
 
-**If both show your correct name and email, keep them and skip the setup commands below.**
+**Both values correct?** Skip the next block. Otherwise, replace **Your Name** and **you@example.com** below with your own name and a GitHub-verified email. Keep the quotes. You can use your GitHub **noreply** address from [email settings](https://github.com/settings/emails) for privacy.
 
-Otherwise, replace **Your Name** with your name and **you@example.com** with an email verified in your GitHub account. To keep your email private, use the GitHub-provided **noreply** address shown in [GitHub email settings](https://github.com/settings/emails). Keep the quotation marks and run these commands one at a time:
+**After replacing both placeholders, copy these lines together:**
 
 ```text
 git config --global user.name "Your Name"
-```
-
-```text
 git config --global user.email "you@example.com"
 ```
 
-Run the two check commands again. **Done:** They show the name and email you want recorded in your commits. If they still show different values, use [Git identity help](HELP.md#git-shows-the-wrong-name-or-email).
+Run the **two check commands above again**. If they still show different values, use [Git identity help](HELP.md#git-shows-the-wrong-name-or-email).
 
-These settings identify the author of your commits. They do not sign you in to GitHub.
+> **DONE — Check all three:**
+>
+> - Git prints a version.
+> - You can sign in to your GitHub account.
+> - Git shows your correct name and email.
+>
+> **Stop here for Part 1.** GitHub authorization happens when you publish or push in the lesson.
 
-If VS Code says **Make sure you configure your "user.name" and "user.email" in git**, complete this step, then try **Commit** again.
+<details>
+<summary>VS Code says to configure user.name and user.email</summary>
+
+Complete Step 3, then try **Commit** again. These settings identify the author of your commits; they do not sign you in to GitHub. You do not need GitHub Desktop, GitHub Copilot, or Node.js for Part 1.
+
+</details>
 
 [Need help?](HELP.md) · [Official VS Code GitHub guide](https://code.visualstudio.com/docs/sourcecontrol/github)

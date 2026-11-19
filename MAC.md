@@ -2,127 +2,151 @@
 
 [Back to start](README.md)
 
-Use this page in the Next.js lesson. Node.js runs JavaScript outside the browser, and npm manages project packages. Complete all three steps on this page: prepare the tools, create your app, and run it.
+**Finish all 3 steps. Stop when your app opens in your browser.**
 
 ## 1. Prepare Node.js and npm
 
-Press **Command+Space**, type **Terminal**, and press Return.
+**Where: Mac Terminal, outside VS Code**
 
-Copy this entire command, paste it into Terminal, and press **Return**.
+1. Press **Command+Space**, type **Terminal**, and press **Return**.
+2. Paste this entire command and press **Return**:
 
 ```bash
 course_setup="$(/usr/bin/mktemp /tmp/itm325-project.XXXXXX)" && /usr/bin/curl --fail --show-error --location --proto '=https' https://raw.githubusercontent.com/cyj-oss/itm325-setup2/main/prepare-mac.sh --output "$course_setup" && /bin/bash "$course_setup"
 ```
 
-Type **Y** to continue. The helper checks Git, Node.js, and npm. It keeps supported working installations and prepares missing tools.
+3. Read the summary. Type **Y**, press **Return**, and wait.
 
-| Message | What to do |
+| Message on your screen | Your next action |
 | --- | --- |
-| **FINISH THE APPLE INSTALLER** | Complete the Command Line Tools window. It includes Git. Then run the same helper again. |
-| **FINISH THE NODE INSTALLER** | Complete the official Node installer. Enter your Mac password there if requested. Then run the same helper again. |
-| **PROJECT TOOLS READY** | Check the tools in VS Code below. |
-| **SETUP NEEDS ATTENTION** | Open [Setup Help](HELP.md) before continuing. |
+| **FINISH THE APPLE INSTALLER** | Finish the Command Line Tools installer, then run the same helper again. |
+| **FINISH THE NODE INSTALLER** | Finish the official Node installer. Enter your Mac password there if requested. Run the same helper again. |
+| **PROJECT TOOLS READY** | Check in VS Code below. |
+| **SETUP NEEDS ATTENTION** | Stop and open [Setup Help](HELP.md). |
 
-You may need to run the helper again after each installer. Completed tools are kept. Homebrew and the full Xcode app are not required.
+**Finish each installer and rerun the helper until PROJECT TOOLS READY appears.** Completed tools are kept.
 
-New Node installations use **Node.js 24 LTS**, which requires macOS **13.5 or later**. Existing supported LTS versions are kept. An old or broken installation is left in place with a link to help.
+<details>
+<summary>What does the helper do? Already installed?</summary>
+
+The helper checks Git, Node.js, and npm. It keeps supported working tools, including Git from the first setup, and installs missing tools. It does not create your Next.js app.
+
+New Node installations use **Node.js 24 LTS**. Existing supported LTS versions are kept. Old or broken installations are left in place for [help](HELP.md#nodejs-version-or-installation-problems).
+
+Node.js 24 requires **macOS 13.5 or later**. Homebrew and the full Xcode app are not required.
+
+</details>
 
 ### Check in VS Code
 
-Save your work, quit VS Code with **Command+Q**, and reopen it. Close any restored terminal with its trash can button. Open **Terminal > New Terminal** and use **Zsh** or your usual **Bash** shell.
+Save your work. Quit VS Code with **Command+Q**, then reopen it. Close any restored terminal with its **trash can** button. Choose **Terminal → New Terminal** and use **Zsh** or your usual **Bash** shell.
 
-Run each command separately in the regular terminal, outside Claude's message area.
+**Where: VS Code Zsh or Bash terminal, outside Claude's message area**  
+**Copy all three lines together**, paste, and press **Return**:
 
 ```bash
 git --version
-```
-
-```bash
 node --version
-```
-
-```bash
 npm --version
 ```
 
-**Done:** All three print version numbers. If a command is not found, use [command help](HELP.md#a-command-is-not-recognized) before reinstalling.
+> **CHECK 1 — All three print version numbers. Continue to Step 2.**
+
+If any command fails, use [command help](HELP.md#a-command-is-not-recognized).
 
 ## 2. Create the Next.js app
 
-Keep using the VS Code terminal. Run **one command at a time**, pressing **Return** after each one.
+**Where: The same VS Code terminal**
 
 ### Go to your course folder
 
-In **Finder**, open your existing **webdev** folder. Choose the one containing your earlier course projects. Choose **View > Show Path Bar**, then Control-click **webdev** in the path bar and choose **Copy “webdev” as Pathname**.
+In **Finder**, open your existing **webdev** folder containing your earlier course projects. Choose **View → Show Path Bar**. **Control-click webdev** in that bar and choose **Copy “webdev” as Pathname**.
 
-In the command below, replace **PASTE_FULL_PATH_TO_WEBDEV_HERE** with the path you copied. Keep the quotation marks. This uses your existing folder wherever it is located.
+Replace **PASTE_FULL_PATH_TO_WEBDEV_HERE** with that path. Keep the quotes, then run:
 
 ```bash
 cd "PASTE_FULL_PATH_TO_WEBDEV_HERE"
 ```
 
-If `cd` reports an error, check the path before continuing. Confirm your current location:
+**If cd reports an error, fix the path before continuing.** Then copy both checks together:
 
 ```bash
 pwd
-```
-
-The path should end in **webdev**. List its contents:
-
-```bash
 ls
 ```
 
+> **CHECK — The path ends in webdev, and its contents are listed.**
+
 ### Create your app
 
-**Already have an app?** If this webdev folder already contains **ohana-link** with a **package.json** file inside it, skip the next command and continue to Step 3. If your existing app has a different name, use that name in Step 3.
+**Already have ohana-link with package.json inside?** Skip the next command and go to Step 3. For an app with another name, use that name in Step 3.
 
-For a new app, run:
+For a **new app**, run:
 
 ```bash
 npx create-next-app@latest ohana-link --use-npm
 ```
 
-If asked to install **create-next-app**, type **y** and press **Return**. When asked about the recommended Next.js defaults, select **Yes, use recommended defaults** and press **Return**.
+- Asked to install **create-next-app**? Type **y** and press **Return**.
+- Asked about defaults? Choose **Yes, use recommended defaults** and press **Return**.
 
-This creates **ohana-link** inside your current webdev folder and installs Next.js and the app's packages there. Wait for the success message and the terminal prompt to return. If the folder already exists but is not a working app, ask for help before creating another copy.
+> **CHECK 2 — A success message appears and the terminal prompt returns. Continue to Step 3.**
+
+If **ohana-link** already exists but is not a working app, ask for help before creating another copy.
 
 ## 3. Run the app
 
-From the **webdev** folder in the same terminal, enter your app folder:
+**Where: The same VS Code terminal, currently in webdev**
+
+Enter your app folder:
 
 ```bash
 cd ohana-link
 ```
 
-Start the development server:
+After it succeeds, start the server:
 
 ```bash
 npm run dev
 ```
 
-Open the **Local** address shown in the terminal in your browser. It is usually **http://localhost:3000**. If the terminal shows another port, use that address.
+**Where: Your browser**  
+Open the **Local** address printed in the terminal, usually **http://localhost:3000**. Use the printed address if the port differs.
 
-**Done:** Your Next.js page appears in the browser. Keep the terminal running while you use the app. To stop the server, click the terminal and press **Control+C**.
+> **DONE — Your Next.js page appears in the browser. Stop here for Part 2.**
+>
+> Keep the terminal running while you use the app.
 
-To edit the project, use **File > Open Folder** in VS Code and select this **ohana-link** folder. You should see **package.json** in Explorer. When you reopen the project later, open a new terminal in that folder and run `npm run dev` again.
+<details>
+<summary>How do I edit, stop, or reopen the app?</summary>
+
+In VS Code, choose **File → Open Folder** and select this **ohana-link** folder. You should see **package.json** in Explorer.
+
+To stop the server, click its terminal and press **Control+C**. Later, open a new terminal in this app folder and run **npm run dev** again.
+
+</details>
 
 ### Existing app with missing packages
 
-A newly created app already has its packages. For an existing app without **node_modules**, restore them from the app folder before running the server.
+<details>
+<summary>My existing app has no node_modules folder</summary>
 
-If **package-lock.json** is present, run:
+New apps already have their packages. For an existing app without **node_modules**, use the **VS Code terminal inside the app folder**.
+
+If **package-lock.json** exists, run:
 
 ```bash
 npm ci
 ```
 
-If there is no package-lock.json, run this instead:
+If there is no **package-lock.json**, use this instead:
 
 ```bash
 npm install
 ```
 
-Then run `npm run dev`.
+Then run **npm run dev**.
+
+</details>
 
 [Setup help](HELP.md) · [Official Next.js instructions](https://nextjs.org/docs/app/getting-started/installation)

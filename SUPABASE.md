@@ -2,34 +2,49 @@
 
 [Back to start](README.md)
 
-Start this page in the database lesson, after your Next.js app runs locally. Windows and Mac follow the same steps.
+**Start after your Next.js app runs. Windows and Mac use this same page.**
 
-Supabase hosts the database online. This setup does not require a local database server, Docker, or the Supabase CLI.
+**Finish line: A Supabase project, app connection settings, and an app that starts.** Database read/write testing comes later in the lesson.
 
 ## 1. Sign in and create a project
 
-1. Open [Supabase](https://supabase.com/) and select **Start your project**.
-2. Use your existing account, or sign up. You can use the GitHub account you prepared in Part 1.
-3. Create an organization with the **Free** plan, or select your existing free organization.
-4. Create a project named **ohana-link**, or open the project you already created for this app.
-5. Generate a database password and save it in your password manager. Choose an available **West US** region for the Hawaii course.
-6. Keep the **Data API** enabled. Keep **Row Level Security**, including automatic RLS if offered, enabled. Create the project and wait until its dashboard is ready.
+**Where: Your browser → [Supabase](https://supabase.com/)**
 
-If the free plan cannot create another project, stop and ask for help before choosing a paid plan or removing an existing project.
+1. Select **Start your project**. Sign in or sign up; you may use your GitHub account.
+2. Select your existing free organization or create one on the **Free** plan.
+3. Open your existing **ohana-link** project, or create one with these settings:
 
-Signing in with GitHub identifies your account. It does not automatically connect the database to your app.
+| Setting | Choose |
+| --- | --- |
+| Project name | **ohana-link** |
+| Database password | Generate one and save it in your password manager |
+| Region | An available **West US** region |
+| Data API | **Enabled** |
+| Row Level Security (RLS) | **Enabled**, including automatic RLS if offered |
+
+Create the project and wait. If the free plan cannot create another project, ask for help before paying or deleting a project.
+
+> **CHECK 1 — Your project dashboard is ready. Continue to Step 2.**
 
 ## 2. Get the app connection details
 
-In the project dashboard, open **Connect** and select the **Next.js / App Router** instructions. You can also find the project URL and **publishable key** in the project's settings and API Keys section.
+**Where: Supabase project dashboard → Connect → Next.js / App Router**
 
-Use the **Project URL** and **publishable key**. Do not use the database password, a secret key, or a `service_role` key for this browser-based connection.
+Find your **Project URL** and **publishable key**. They are also in the project's settings and API Keys section.
+
+> **CHECK 2 — You have both values from the same project. Continue to Step 3.**
+>
+> Use the **publishable key**, never a secret key, service_role key, or database password.
 
 ## 3. Prepare the connection in your app
 
-1. Open your existing **ohana-link** folder in VS Code.
-2. Check that **.gitignore** includes `.env*`. Keep its other entries.
-3. Start Claude Code in that project and paste the following prompt into Claude's message area.
+### A. Ask Claude to prepare the files
+
+1. In VS Code, open your existing **ohana-link** folder.
+2. Check that **.gitignore** includes `.env*`; keep its other entries.
+3. Start Claude Code in this project.
+
+**Where: Claude's message area in VS Code — paste the entire prompt:**
 
 ```text
 Connect this existing Next.js App Router project to Supabase.
@@ -45,33 +60,75 @@ Show me the files you changed and the exact command to start the app.
 Tell me which setup checks you completed. Do not claim that database reads or writes work until they have been tested against the lesson tables.
 ```
 
-4. Review Claude's proposed changes and installation commands before approving them.
-5. Open **.env.local** in the same folder as **package.json**. Add or update these two entries with the values from your own Supabase project. Preserve other settings in the file.
+Review Claude's proposed changes and installation commands before approving them.
 
-   ```dotenv
-   NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
-   ```
+### B. Add your project's values
 
-The publishable key is intended for use in an app, including its browser code. Data access is controlled by database permissions and RLS policies. A secret key or database password must stay private.
+**Where: VS Code editor → .env.local, beside package.json**  
+This goes in the **file**, not the terminal or Claude's message area.
+
+Replace the two example values with your own Project URL and publishable key. Preserve other settings and save the file.
+
+```dotenv
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
+```
+
+> **CHECK 3 — Claude created or updated the connection files, and .env.local has your real values instead of placeholders. Continue to Step 4.**
+
+<details>
+<summary>Is the publishable key a password?</summary>
+
+No. It is intended for app code, including browser code. Database permissions and RLS policies control access to data. Secret keys and database passwords must stay private.
+
+Supabase runs online; no local database server, Docker, or Supabase CLI is required here. Signing in with GitHub does not connect Supabase to your app.
+
+</details>
 
 ## 4. Check the setup
 
-1. Review the new or updated Supabase connection files in VS Code. File names can differ between projects.
-2. Confirm that **.env.local** contains your project's URL and publishable key instead of placeholders.
-3. In a regular terminal inside your project, run:
+**Where: A regular VS Code terminal inside ohana-link, outside Claude**  
+Use PowerShell on Windows or Zsh/Bash on Mac. Copy both checks together:
 
-   ```text
-   git check-ignore .env.local
-   git ls-files .env.local
-   ```
+```text
+git check-ignore .env.local
+git ls-files .env.local
+```
 
-   The first command should print `.env.local`. The second should print nothing. If either result is different, use [Setup help](HELP.md#files-that-should-not-be-uploaded) before publishing.
+> **CHECK — The first command prints .env.local. The second prints nothing.**
 
-4. Stop the development server with **Control+C** and restart it with `npm.cmd run dev` on Windows or `npm run dev` on Mac. Open the Local address and check for setup errors.
+If either result differs, use [file help](HELP.md#files-that-should-not-be-uploaded) before publishing.
 
-**Prepared for the database lesson:** Your Supabase project exists, the connection files and settings are in place, and the app starts. This is not yet a database read or write test.
+Stop the running development server with **Control+C**. Restart it in the **app's terminal** using only your computer's command:
 
-Continue with the lesson to create the tables and access policies. Then save a test item in the app, confirm it appears in Supabase, and reload the app to confirm it is read back. That is the final connection check.
+**Windows — PowerShell:**
+
+```powershell
+npm.cmd run dev
+```
+
+**Mac — Zsh or Bash:**
+
+```bash
+npm run dev
+```
+
+**Where: Your browser**  
+Open the **Local** address printed in the terminal. Check that the app starts without setup errors.
+
+> **DONE — Check all three:**
+>
+> - Your Supabase project exists.
+> - Connection files and real settings are saved; .env.local is ignored and untracked.
+> - Your app starts.
+>
+> **Stop here for Part 3 setup.** This does not yet prove database reads or writes work.
+
+<details>
+<summary>When do we test reading and saving data?</summary>
+
+In the database lesson, create the tables and access policies. Save a test item in the app, confirm it appears in Supabase, and reload the app to confirm it is read back. That is the final connection check.
+
+</details>
 
 [Need help?](HELP.md) · [Official Next.js connection guide](https://supabase.com/docs/guides/getting-started/quickstarts/nextjs) · [Supabase API keys](https://supabase.com/docs/guides/getting-started/api-keys)

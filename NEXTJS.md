@@ -2,14 +2,14 @@
 
 [Back to start](README.md)
 
-Node.js setup, app creation, and app execution are now together on one page for each system.
+**Choose your computer. Follow its guide until your app opens in your browser.**
 
-## 1. Create the app
+| Start from | Windows | Mac |
+| --- | --- | --- |
+| Need Node.js and npm | **[Step 1](WINDOWS.md#1-prepare-nodejs-and-npm)** | **[Step 1](MAC.md#1-prepare-nodejs-and-npm)** |
+| Tools ready; create an app | **[Step 2](WINDOWS.md#2-create-the-nextjs-app)** | **[Step 2](MAC.md#2-create-the-nextjs-app)** |
+| App already exists; run it | **[Step 3](WINDOWS.md#3-run-the-app)** | **[Step 3](MAC.md#3-run-the-app)** |
 
-If Node.js and npm are ready, continue with **[Windows: create the app](WINDOWS.md#2-create-the-nextjs-app)** or **[Mac: create the app](MAC.md#2-create-the-nextjs-app)**.
+> **DONE — Your Next.js page appears in your browser. Stop here for Part 2.**
 
-If you still need Node.js, start at the top of the **[Windows guide](WINDOWS.md)** or **[Mac guide](MAC.md)**.
-
-## 2. Run the app
-
-Already have an app? Follow **[Windows: run the app](WINDOWS.md#3-run-the-app)** or **[Mac: run the app](MAC.md#3-run-the-app)**. The same page includes help for missing packages.
+[Need help?](HELP.md#the-app-does-not-run)

@@ -1,33 +1,22 @@
 # ITM 325 | GitHub, Next.js, and Supabase Setup
 
-Complete only the part assigned in Lamaku. Keep your existing VS Code and Claude Code installations.
+**Complete only the Part assigned in Lamakū. Stop at that Part's DONE box.**
 
-## Part 1 · GitHub Account and Connection
+| Your lesson | Open this guide | You are finished when |
+| --- | --- | --- |
+| **Part 1 · GitHub** | **[GitHub account and connection](GITHUB.md)** · Windows and Mac | Git works, you can sign in to GitHub, and Git shows your name and email |
+| **Part 2 · Node.js and Next.js** | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Your app opens in your browser |
+| **Part 3 · Supabase** | **[Supabase setup](SUPABASE.md)** · Windows and Mac | Your cloud project and app settings are ready, and the app starts |
 
-Open **[GitHub account and connection](GITHUB.md)** for the Git and GitHub lesson.
+**Keep your existing VS Code, Claude Code, accounts, and projects.**
 
-Check Git, prepare your GitHub account, and set your Git name and email for commits. Windows students who completed the first setup already have Git; check its version instead of reinstalling it. The guide includes Mac instructions if Git is missing.
+<details>
+<summary>What are these three Parts?</summary>
 
-**Git** records changes on your computer. **GitHub** stores your project and its history online. GitHub is an online service; no GitHub Desktop installation is required. Node.js is not needed for this part.
+- **Part 1:** Git records changes on your computer. GitHub stores them online. Set your Git name and email before committing; GitHub authorization happens when the lesson asks you to publish or push. No GitHub Desktop or Node.js is needed here.
+- **Part 2:** Prepare Node.js and npm, create a Next.js app, and run it. Follow all three steps on your computer's page.
+- **Part 3:** Prepare Supabase after your Next.js app works. Testing database reads and writes comes later in the database lesson.
 
-## Part 2 · Node.js and Next.js Setup
-
-Open **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** and follow all three steps on that page.
-
-1. Prepare Node.js and npm.
-2. Create the Next.js app.
-3. Run the app.
-
-The setup helper prepares the tools. You then enter the app commands one at a time in your existing course folder. If you already created the app, keep it and skip the creation command.
-
-## Part 3 · Supabase Setup
-
-Open **[Supabase setup](SUPABASE.md)** when you reach the database lesson and have a working Next.js app.
-
-Create a Supabase account and cloud project, then prepare your app's connection. Windows and Mac use the same guide.
-
-## Already set up?
-
-The helpers skip supported working tools. Keep existing accounts, projects, and connections. GitHub and Supabase sign-in happen in the browser.
+</details>
 
 [Setup help](HELP.md) · [First setup: VS Code and Claude Code](https://github.com/cyj-oss/itm325-setup)
