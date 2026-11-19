@@ -49,7 +49,9 @@ npm.cmd --version
 
 > **CHECK 1 — All three print version numbers.**
 >
-> **Interactive book:** return to [Lesson 6.4](https://cyj-oss.github.io/itm325-vibecoding/#lesson=6.4&step=0). **Using only this guide:** continue to Step 2.
+> **Interactive book:** stop here and use the button below. **Using only this guide:** continue to Step 2.
+
+[![Return to book — Lesson 6.4, Step 1](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/return-to-book.svg)](https://cyj-oss.github.io/itm325-vibecoding/#lesson=6.4&step=0)
 
 If any command fails, use [command help](HELP.md#a-command-is-not-recognized).
 
