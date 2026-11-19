@@ -32,4 +32,36 @@ Complete the Apple installer, quit VS Code with **Command+Q**, and reopen it wit
 
 **Check:** Your profile menu shows the account you will use for class.
 
+## 3. Set your Git name and email
+
+Complete this before your first commit. **Windows and Mac use the same commands.** In VS Code, open **Terminal > New Terminal** and run each command separately in the regular terminal.
+
+Check your current settings:
+
+```text
+git config --get user.name
+```
+
+```text
+git config --get user.email
+```
+
+**If both show your correct name and email, keep them and skip the setup commands below.**
+
+Otherwise, replace **Your Name** with your name and **you@example.com** with an email verified in your GitHub account. To keep your email private, use the GitHub-provided **noreply** address shown in [GitHub email settings](https://github.com/settings/emails). Keep the quotation marks and run these commands one at a time:
+
+```text
+git config --global user.name "Your Name"
+```
+
+```text
+git config --global user.email "you@example.com"
+```
+
+Run the two check commands again. **Done:** They show the name and email you want recorded in your commits. If they still show different values, use [Git identity help](HELP.md#git-shows-the-wrong-name-or-email).
+
+These settings identify the author of your commits. They do not sign you in to GitHub.
+
+If VS Code says **Make sure you configure your "user.name" and "user.email" in git**, complete this step, then try **Commit** again.
+
 [Need help?](HELP.md) · [Official VS Code GitHub guide](https://code.visualstudio.com/docs/sourcecontrol/github)
