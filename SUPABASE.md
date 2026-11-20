@@ -18,9 +18,13 @@
 | --- | --- |
 | Project name | **ohana-link** |
 | Database password | Generate one and save it in your password manager |
-| Region | An available **West US** region |
+| Region | **Americas** |
 | Data API | **Enabled** |
 | Row Level Security (RLS) | **Enabled**, including automatic RLS if offered |
+
+![Supabase project creation screen with Americas selected](supabase-project-americas.png)
+
+*Example screen. Use your own organization and password.*
 
 Create the project and wait. If the free plan cannot create another project, ask for help before paying or deleting a project.
 
