@@ -22,7 +22,7 @@
 | Data API | **Enabled** |
 | Row Level Security (RLS) | **Enabled**, including automatic RLS if offered |
 
-![Supabase project creation screen with Americas selected](supabase-project-americas.png)
+[<img src="supabase-project-americas.png" alt="Supabase project creation screen with Americas selected" width="480">](supabase-project-americas.png)
 
 *Example screen. Use your own organization and password.*
 
@@ -38,7 +38,7 @@ Create the project and wait. If the free plan cannot create another project, ask
 2. Select **Framework**, then choose **Next.js** and **App Router**.
 3. Click **Copy prompt** in the Connect panel. This copies the full setup instructions for Claude Code.
 
-![Supabase Connect panel with Copy prompt highlighted](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-copy-prompt.png)
+[<img src="https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-copy-prompt.png" alt="Supabase Connect panel with Copy prompt highlighted" width="540">](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-copy-prompt.png)
 
 *The section may be called Connect your app or Follow these steps. Use its Copy prompt button.*
 
@@ -66,7 +66,7 @@ Create the project and wait. If the free plan cannot create another project, ask
 3. In Supabase, look under **Add files → .env.local** to compare the values. Keep correct values already in your file.
 4. Open **.gitignore** and check that it includes `.env*`. Keep its other entries.
 
-![English example showing .env.local beside package.json and the two Supabase settings](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-env-local-english.png)
+[<img src="https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-env-local-english.png" alt="English example showing .env.local beside package.json and the two Supabase settings" width="620">](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-env-local-english.png)
 
 *Adapted example. Your file must contain your own project's values, not the placeholders in this image.*
 
