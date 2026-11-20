@@ -34,7 +34,14 @@ Create the project and wait. If the free plan cannot create another project, ask
 
 **Where: Supabase project dashboard → Connect → Next.js / App Router**
 
-Find your **Project URL** and **publishable key**. They are also in the project's settings and API Keys section.
+Under **Add files**, select the **.env.local** tab. It shows two lines:
+
+- **NEXT_PUBLIC_SUPABASE_URL** — your Project URL.
+- **NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY** — your publishable key.
+
+Keep this tab open. You will copy these lines in **Step 3B** below.
+
+Continue to **Step 3** below. Claude will prepare the packages and files; you do not need to run the dashboard's installation commands separately.
 
 > **CHECK 2 — You have both values from the same project. Continue to Step 3.**
 >
@@ -70,9 +77,11 @@ Review Claude's proposed changes and installation commands before approving them
 
 ### B. Add your project's values
 
-Open **.env.local** in the VS Code editor.
+1. In VS Code, open **.env.local** in your **ohana-link** folder, beside **package.json**.
+2. Return to Supabase's **Add files → .env.local** tab. Copy only the **two complete lines**, including each name, `=`, and full value. Scroll horizontally if needed to reach the ends.
+3. In your project's **.env.local**, replace the two matching placeholder lines with the copied lines. Keep any other settings and save the file.
 
-Replace the two example values with your own Project URL and publishable key. Preserve other settings and save the file.
+Your two lines should have this format, with your own project's values:
 
 > **Where to paste:** VS Code editor · **.env.local** · beside **package.json**
 
