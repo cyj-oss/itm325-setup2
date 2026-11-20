@@ -30,58 +30,56 @@ Create the project and wait. If the free plan cannot create another project, ask
 
 > **CHECK 1 — Your project dashboard is ready. Continue to Step 2.**
 
-## 2. Get the app connection details
+## 2. Copy Supabase's setup prompt
 
-**Where: Supabase project dashboard → Connect → Next.js / App Router**
+**Where: Your browser → Supabase project dashboard → Connect**
 
-Under **Add files**, select the **.env.local** tab. It shows two lines:
+1. Click **Connect** at the top of your project.
+2. Select **Framework**, then choose **Next.js** and **App Router**.
+3. Click **Copy prompt** in the Connect panel. This copies the full setup instructions for Claude Code.
 
-- **`NEXT_PUBLIC_SUPABASE_URL`** — your Project URL.
-- **`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`** — your publishable key.
+![Supabase Connect panel with Copy prompt highlighted](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-copy-prompt.png)
 
-Keep this tab open. You will copy these lines in **Step 3B** below.
+*The section may be called Connect your app or Follow these steps. Use its Copy prompt button.*
 
-Continue to **Step 3** below. Claude will prepare the packages and files; you do not need to run the dashboard's installation commands separately.
+> **CHECK 2 — You copied the full setup prompt. Continue to Step 3.**
 
-> **CHECK 2 — You have both values from the same project. Continue to Step 3.**
->
-> Use the **publishable key**, never a secret key, service_role key, or database password.
+## 3. Run the prompt and check the files
 
-## 3. Prepare the connection in your app
-
-### A. Ask Claude to prepare the files
+### A. Paste the copied prompt into Claude Code
 
 1. In VS Code, open your existing **ohana-link** folder.
-2. Check that **.gitignore** includes `.env*`; keep its other entries.
-3. Start Claude Code in this project.
+2. If Claude Code is not running, choose **Terminal → New Terminal**, type `claude`, and press **Enter**.
+3. Paste the prompt you copied from Supabase into Claude Code. Use **Control+V** on Windows or **Command+V** on Mac, then press **Enter**.
+4. Review the proposed changes and installation commands. Let Claude finish preparing the connection files.
 
-Paste the entire prompt and press **Enter** to send:
+> **Where to paste:** **Claude Code input** · in the VS Code terminal panel · in **ohana-link**
+>
+> Paste the **full prompt copied from Supabase**, not just the package-install command. You do not need to run the dashboard's installation commands separately.
 
-> **Where to paste:** **Claude Code input** · in the VS Code terminal panel
+### B. Check the generated files
 
-```text
-Connect this existing Next.js App Router project to Supabase.
-Follow the current official Supabase Next.js instructions at https://supabase.com/docs/guides/getting-started/quickstarts/nextjs.
-Inspect the existing files first and preserve my app and any working connection.
-Install missing Supabase packages locally in this project using its existing package manager.
-Create or update the appropriate Supabase client files for this app.
-Use NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY from .env.local.
-If a value is missing, leave a clear placeholder for me to fill in locally. Do not print existing values or overwrite them.
-Ensure .env.local is ignored by Git. Do not use a secret key, service_role key, or database password.
-Keep Row Level Security enabled. Do not create tables, change database policies, add authentication screens, or publish anything yet.
-Show me the files you changed and the exact command to start the app.
-Tell me which setup checks you completed. Do not claim that database reads or writes work until they have been tested against the lesson tables.
-```
+1. In **VS Code → Explorer**, open **.env.local** in the **ohana-link** folder, beside **package.json**.
+2. Confirm it contains these two settings with your own project's values:
+   - **`NEXT_PUBLIC_SUPABASE_URL`** — your Project URL.
+   - **`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`** — your publishable key.
+3. In Supabase, look under **Add files → .env.local** to compare the values. Keep correct values already in your file.
+4. Open **.gitignore** and check that it includes `.env*`. Keep its other entries.
 
-Review Claude's proposed changes and installation commands before approving them.
+![English example showing .env.local beside package.json and the two Supabase settings](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-env-local-english.png)
 
-### B. Add your project's values
+*Adapted example. Your file must contain your own project's values, not the placeholders in this image.*
 
-1. In VS Code, open **.env.local** in your **ohana-link** folder, beside **package.json**.
-2. Return to Supabase's **Add files → .env.local** tab. Copy only the **two complete lines**, including each name, `=`, and full value. Scroll horizontally if needed to reach the ends.
-3. In your project's **.env.local**, replace the two matching placeholder lines with the copied lines. Keep any other settings and save the file.
+> **CHECK 3 — Claude prepared the connection files, .env.local contains your project URL and publishable key, and .gitignore includes .env*. Continue to Step 4.**
 
-Your two lines should have this format, with your own project's values:
+<details>
+<summary>If .env.local is missing or still has placeholders</summary>
+
+If the file is missing, ask Claude to finish creating it in the project folder beside **package.json**.
+
+If values are missing, return to Supabase's **Add files → .env.local** tab. Copy the **two complete lines**, including each name, `=`, and full value. Scroll horizontally if needed to reach the ends.
+
+Replace the matching placeholder lines in your project's **.env.local**, preserve other settings, and save. The format is:
 
 > **Where to paste:** VS Code editor · **.env.local** · beside **package.json**
 
@@ -90,7 +88,16 @@ NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
 ```
 
-> **CHECK 3 — Claude created or updated the connection files, and .env.local has your real values instead of placeholders. Continue to Step 4.**
+Use the **publishable key**, never a secret key, service_role key, or database password.
+
+</details>
+
+<details>
+<summary>Which other files did Claude create?</summary>
+
+You may see files such as **client.ts** and **server.ts** under **utils/supabase** or **lib/supabase**. The exact folder and helper names can vary. Follow Claude's change summary; you do not need to create duplicate files to match the example.
+
+</details>
 
 <details>
 <summary>Is the publishable key a password?</summary>
