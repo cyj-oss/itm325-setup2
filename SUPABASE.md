@@ -42,6 +42,15 @@ Create the project and wait. If the free plan cannot create another project, ask
 
 *The section may be called Connect your app or Follow these steps. Use its Copy prompt button.*
 
+<details>
+<summary>See the Connect button and framework choices</summary>
+
+[<img src="https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-connect-button.png" alt="Supabase project dashboard with Connect highlighted" width="620">](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-connect-button.png)
+
+[<img src="https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-nextjs-app-router.png" alt="Framework selected with Next.js and App Router" width="540">](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-nextjs-app-router.png)
+
+</details>
+
 > **CHECK 2 — You copied the full setup prompt. Continue to Step 3.**
 
 ## 3. Run the prompt and check the files
@@ -69,6 +78,13 @@ Create the project and wait. If the free plan cannot create another project, ask
 [<img src="https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-env-local-english.png" alt="English example showing .env.local beside package.json and the two Supabase settings" width="620">](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-env-local-english.png)
 
 *Adapted example. Your file must contain your own project's values, not the placeholders in this image.*
+
+<details>
+<summary>See the .gitignore example</summary>
+
+[<img src="https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-gitignore-env.png" alt="The .env* rule highlighted in .gitignore" width="540">](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/image-supabase-gitignore-env.png)
+
+</details>
 
 > **CHECK 3 — Claude prepared the connection files, .env.local contains your project URL and publishable key, and .gitignore includes .env*. Continue to Step 4.**
 
