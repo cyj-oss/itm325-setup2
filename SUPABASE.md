@@ -124,7 +124,7 @@ Open the **Local** address printed in the terminal. Check that the app starts wi
 >
 > **Stop here for Part 3 setup.** This does not yet prove database reads or writes work.
 
-[![Return to book — Lesson 8.2, Step 1](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/return-to-book.svg)](https://cyj-oss.github.io/itm325-vibecoding/#lesson=8.2&step=0)
+[![Return to book — Lesson 8.2, Step 1](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/return-to-book.svg)](https://cyj-oss.github.io/itm325-vibecoding/#lesson=8.2&step=0&resume=1)
 
 <details>
 <summary>When do we test reading and saving data?</summary>
