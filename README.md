@@ -4,7 +4,7 @@
 
 | Your lesson | Open this guide | You are finished when |
 | --- | --- | --- |
-| **Part 1 · GitHub** | **[GitHub account and connection](GITHUB.md)** · Windows and Mac | Git works, you can sign in to GitHub, and Git shows your name and email |
+| **Part 1 · GitHub** | **[Windows](GITHUB-WINDOWS.md)** or **[Mac](GITHUB-MAC.md)** | Git works, you can sign in to GitHub, and Git shows your name and email |
 | **Part 2 · Node.js and Next.js** | **[Windows](WINDOWS.md)** or **[Mac](MAC.md)** | Your app opens in your browser |
 | **Part 3 · Supabase** | **[Supabase setup](SUPABASE.md)** · Windows and Mac | Your cloud project and app settings are ready, and the app starts |
 
