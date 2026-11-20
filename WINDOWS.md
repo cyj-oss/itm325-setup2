@@ -60,14 +60,10 @@ If any command fails, use [command help](HELP.md#a-command-is-not-recognized).
 
 ### Go to your course folder
 
-In **File Explorer**, open your existing **webdev** folder containing your earlier course projects. Click the **address bar** and copy the full path.
-
-Replace **PASTE_FULL_PATH_TO_WEBDEV_HERE** with that path. Keep the quotes, then run:
-
 > **Where to paste:** VS Code terminal · **PowerShell**
 
 ```powershell
-cd "PASTE_FULL_PATH_TO_WEBDEV_HERE"
+cd C:\webdev
 ```
 
 **If cd reports an error, fix the path before continuing.** Then copy both checks together:
@@ -162,3 +158,7 @@ Then run **npm.cmd run dev**.
 </details>
 
 [Setup help](HELP.md) · [Official Next.js instructions](https://nextjs.org/docs/app/getting-started/installation)
+
+**Finished all three steps?** Continue in the book with **Read package.json**.
+
+[![Return to book — Lesson 6.4, Read package.json](https://raw.githubusercontent.com/cyj-oss/itm325-vibecoding/main/return-to-book.svg)](https://cyj-oss.github.io/itm325-vibecoding/#lesson=6.4&step=2&resume=1)
