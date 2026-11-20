@@ -93,8 +93,59 @@ If a generated folder such as node_modules was already committed, ask for help b
 ## The app does not run
 
 - **package.json not found:** Open the actual app folder, then open a new terminal.
-- **Missing packages:** Follow the restore-packages step for [Windows](WINDOWS.md#existing-app-with-missing-packages) or [Mac](MAC.md#existing-app-with-missing-packages).
+- **Missing packages:** Stop the development server with **Control+C**, keep **package.json** and **package-lock.json**, then follow the restore-packages step for [Windows](WINDOWS.md#existing-app-with-missing-packages) or [Mac](MAC.md#existing-app-with-missing-packages).
 - **Port 3000 is in use:** Open the Local address printed by the current terminal. It may use another port.
+
+## Cannot find module @tailwindcss/turbopack
+
+Use this section only if the browser shows that exact message. Other errors need a different check.
+
+### 1. Check whether the package can be found
+
+Stop the development server with **Control+C**. In a regular VS Code terminal inside **ohana-link**, run:
+
+> **Where to paste:** VS Code terminal · **PowerShell on Windows / Zsh or Bash on Mac** · in **ohana-link**
+
+```text
+node -p "require.resolve('@tailwindcss/turbopack')"
+```
+
+- **A file path appears:** The package is installed. Continue to Step 2.
+- **The command also says the module cannot be found:** Restore the existing app's packages using the [Windows](WINDOWS.md#existing-app-with-missing-packages) or [Mac](MAC.md#existing-app-with-missing-packages) instructions, then repeat this check. If it still fails, stop and ask for help.
+
+### 2. Update one existing configuration line
+
+In **VS Code Explorer**, open **ohana-link → next.config.ts**. Find the existing line `loaders: ["@tailwindcss/turbopack"],` and replace only that line with:
+
+> **Where to paste:** VS Code **editor** · **ohana-link/next.config.ts** · replace the existing **loaders** line
+
+```typescript
+loaders: [require.resolve("@tailwindcss/turbopack")],
+```
+
+Save the file. This lets Node find the installed loader before passing its path to Turbopack. It resolved this error in the tested Windows course project. If your configuration does not contain that line, ask for help instead of adding or replacing the whole configuration.
+
+### 3. Restart and check the browser
+
+**Windows**
+
+> **Where to paste:** VS Code terminal · **PowerShell** · in **ohana-link**
+
+```powershell
+npm.cmd run dev
+```
+
+**Mac**
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash** · in **ohana-link**
+
+```bash
+npm run dev
+```
+
+Open the **Local** address printed in the terminal. Continue only when the app appears without a build error. If the error remains, keep the full message and ask for help.
+
+[Next.js loader configuration reference](https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#advanced-webpack-loader-conditions)
 
 ## Supabase setup or data access fails
 
