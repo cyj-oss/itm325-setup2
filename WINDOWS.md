@@ -8,10 +8,10 @@
 
 ## 1. Prepare Node.js and npm
 
-**Where: Windows PowerShell, outside VS Code**
-
 1. Search for **Windows PowerShell** in Start and open it normally, **without x86**. The prompt should begin with **PS**. If you opened Command Prompt, type **powershell** and press Enter first.
 2. Paste this entire command and press **Enter**:
+
+> **Where to paste:** **Windows PowerShell** · opened from the Start menu
 
 ```powershell
 & ([scriptblock]::Create((Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/cyj-oss/itm325-setup2/main/prepare-windows.ps1')))
@@ -38,8 +38,9 @@ New Node installations use **Node.js 24 LTS**. Existing supported LTS versions a
 
 Save your work. Close **all VS Code windows**, then reopen VS Code. Close any restored terminal with its **trash can** button. Choose **Terminal → New Terminal** and select **PowerShell** from its dropdown.
 
-**Where: VS Code PowerShell terminal, outside Claude's message area**  
-**Copy all three lines together**, paste, and press **Enter**:
+Run commands outside Claude Code. **Copy all three lines together**, paste, and press **Enter**:
+
+> **Where to paste:** VS Code terminal · **PowerShell**
 
 ```powershell
 git --version
@@ -57,19 +58,21 @@ If any command fails, use [command help](HELP.md#a-command-is-not-recognized).
 
 ## 2. Create the Next.js app
 
-**Where: The same VS Code terminal**
-
 ### Go to your course folder
 
 In **File Explorer**, open your existing **webdev** folder containing your earlier course projects. Click the **address bar** and copy the full path.
 
 Replace **PASTE_FULL_PATH_TO_WEBDEV_HERE** with that path. Keep the quotes, then run:
 
+> **Where to paste:** VS Code terminal · **PowerShell**
+
 ```powershell
 cd "PASTE_FULL_PATH_TO_WEBDEV_HERE"
 ```
 
 **If cd reports an error, fix the path before continuing.** Then copy both checks together:
+
+> **Where to paste:** VS Code terminal · **PowerShell** · in **webdev**
 
 ```powershell
 pwd
@@ -84,6 +87,8 @@ ls
 
 For a **new app**, run:
 
+> **Where to paste:** VS Code terminal · **PowerShell** · in **webdev**
+
 ```powershell
 npx.cmd create-next-app@latest ohana-link --use-npm
 ```
@@ -97,15 +102,17 @@ If **ohana-link** already exists but is not a working app, ask for help before c
 
 ## 3. Run the app
 
-**Where: The same VS Code terminal, currently in webdev**
-
 Enter your app folder:
+
+> **Where to paste:** VS Code terminal · **PowerShell** · in **webdev**
 
 ```powershell
 cd ohana-link
 ```
 
 After it succeeds, start the server:
+
+> **Where to paste:** VS Code terminal · **PowerShell** · in **your app folder**
 
 ```powershell
 npm.cmd run dev
@@ -136,11 +143,15 @@ New apps already have their packages. For an existing app without **node_modules
 
 If **package-lock.json** exists, run:
 
+> **Where to paste:** VS Code terminal · **PowerShell** · in **your app folder**
+
 ```powershell
 npm.cmd ci
 ```
 
 If there is no **package-lock.json**, use this instead:
+
+> **Where to paste:** VS Code terminal · **PowerShell** · in **your app folder**
 
 ```powershell
 npm.cmd install

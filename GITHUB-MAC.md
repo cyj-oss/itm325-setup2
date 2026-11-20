@@ -6,9 +6,11 @@
 
 ## 1. Prepare Apple's Command Line Tools and check Git
 
-**Where: VS Code → Terminal → New Terminal → Zsh or Bash**, outside Claude's message area.
+In VS Code, choose **Terminal → New Terminal** and use **Zsh or Bash**. Run commands outside Claude Code.
 
 **Every Mac student: run this first.** Copy, paste, and press **Return**:
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash**
 
 ```bash
 xcode-select --install
@@ -18,6 +20,8 @@ xcode-select --install
 - **The message says the tools are already installed:** Keep them and continue to the version check below.
 
 **After installation finishes, or if the tools are already installed**, run this in the VS Code terminal:
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash**
 
 ```bash
 git --version
@@ -44,9 +48,9 @@ Use [Mac Git help](HELP.md#mac-git-does-not-start). Do not continue until Git pr
 
 ## 3. Set your Git name and email
 
-**Where: The VS Code terminal, outside Claude**
-
 **Check first. Copy both lines together:**
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash**
 
 ```text
 git config --get user.name
@@ -56,6 +60,8 @@ git config --get user.email
 **Both values correct?** Skip the next block. Otherwise, replace **Your Name** and **you@example.com** below with your own name and a GitHub-verified email. Keep the quotes. You can use your GitHub **noreply** address from [email settings](https://github.com/settings/emails) for privacy.
 
 **After replacing both placeholders, copy these lines together:**
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash**
 
 ```text
 git config --global user.name "Your Name"

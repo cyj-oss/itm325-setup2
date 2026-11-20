@@ -44,7 +44,9 @@ Find your **Project URL** and **publishable key**. They are also in the project'
 2. Check that **.gitignore** includes `.env*`; keep its other entries.
 3. Start Claude Code in this project.
 
-**Where: Claude's message area in VS Code — paste the entire prompt:**
+Paste the entire prompt and press **Enter** to send:
+
+> **Where to paste:** **Claude Code input** · in the VS Code terminal panel
 
 ```text
 Connect this existing Next.js App Router project to Supabase.
@@ -64,10 +66,11 @@ Review Claude's proposed changes and installation commands before approving them
 
 ### B. Add your project's values
 
-**Where: VS Code editor → .env.local, beside package.json**  
-This goes in the **file**, not the terminal or Claude's message area.
+Open **.env.local** in the VS Code editor.
 
 Replace the two example values with your own Project URL and publishable key. Preserve other settings and save the file.
+
+> **Where to paste:** VS Code editor · **.env.local** · beside **package.json**
 
 ```dotenv
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
@@ -87,8 +90,9 @@ Supabase runs online; no local database server, Docker, or Supabase CLI is requi
 
 ## 4. Check the setup
 
-**Where: A regular VS Code terminal inside ohana-link, outside Claude**  
-Use PowerShell on Windows or Zsh/Bash on Mac. Copy both checks together:
+Run commands outside Claude Code. **Copy both checks together:**
+
+> **Where to paste:** VS Code terminal · **PowerShell on Windows / Zsh or Bash on Mac** · in **ohana-link**
 
 ```text
 git check-ignore .env.local
@@ -101,13 +105,13 @@ If either result differs, use [file help](HELP.md#files-that-should-not-be-uploa
 
 Stop the running development server with **Control+C**. Restart it in the **app's terminal** using only your computer's command:
 
-**Windows — PowerShell:**
+> **Where to paste:** VS Code terminal · **PowerShell** · in **ohana-link**
 
 ```powershell
 npm.cmd run dev
 ```
 
-**Mac — Zsh or Bash:**
+> **Where to paste:** VS Code terminal · **Zsh or Bash** · in **ohana-link**
 
 ```bash
 npm run dev

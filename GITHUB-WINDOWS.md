@@ -8,9 +8,11 @@
 
 Git was included in the first course setup. **Check its version; if a version appears, continue without reinstalling.**
 
-**Where: VS Code → Terminal → New Terminal → PowerShell**, outside Claude's message area.
+In VS Code, choose **Terminal → New Terminal → PowerShell**. Run commands outside Claude Code.
 
 Copy, paste, and press **Enter**:
+
+> **Where to paste:** VS Code terminal · **PowerShell**
 
 ```powershell
 git --version
@@ -37,9 +39,9 @@ Try [command help](HELP.md#a-command-is-not-recognized) first. Use the [Windows 
 
 ## 3. Set your Git name and email
 
-**Where: The VS Code terminal, outside Claude**
-
 **Check first. Copy both lines together:**
+
+> **Where to paste:** VS Code terminal · **PowerShell**
 
 ```text
 git config --get user.name
@@ -49,6 +51,8 @@ git config --get user.email
 **Both values correct?** Skip the next block. Otherwise, replace **Your Name** and **you@example.com** below with your own name and a GitHub-verified email. Keep the quotes. You can use your GitHub **noreply** address from [email settings](https://github.com/settings/emails) for privacy.
 
 **After replacing both placeholders, copy these lines together:**
+
+> **Where to paste:** VS Code terminal · **PowerShell**
 
 ```text
 git config --global user.name "Your Name"

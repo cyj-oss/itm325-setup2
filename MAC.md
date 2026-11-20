@@ -8,10 +8,10 @@
 
 ## 1. Prepare Node.js and npm
 
-**Where: Mac Terminal, outside VS Code**
-
 1. Press **Command+Space**, type **Terminal**, and press **Return**.
 2. Paste this entire command and press **Return**:
+
+> **Where to paste:** **Mac Terminal app** · opened with Command+Space
 
 ```bash
 course_setup="$(/usr/bin/mktemp /tmp/itm325-project.XXXXXX)" && /usr/bin/curl --fail --show-error --location --proto '=https' https://raw.githubusercontent.com/cyj-oss/itm325-setup2/main/prepare-mac.sh --output "$course_setup" && /bin/bash "$course_setup"
@@ -43,8 +43,9 @@ Node.js 24 requires **macOS 13.5 or later**. Homebrew and the full Xcode app are
 
 Save your work. Quit VS Code with **Command+Q**, then reopen it. Close any restored terminal with its **trash can** button. Choose **Terminal → New Terminal** and use **Zsh** or your usual **Bash** shell.
 
-**Where: VS Code Zsh or Bash terminal, outside Claude's message area**  
-**Copy all three lines together**, paste, and press **Return**:
+Run commands outside Claude Code. **Copy all three lines together**, paste, and press **Return**:
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash**
 
 ```bash
 git --version
@@ -62,19 +63,21 @@ If any command fails, use [command help](HELP.md#a-command-is-not-recognized).
 
 ## 2. Create the Next.js app
 
-**Where: The same VS Code terminal**
-
 ### Go to your course folder
 
 In **Finder**, open your existing **webdev** folder containing your earlier course projects. Choose **View → Show Path Bar**. **Control-click webdev** in that bar and choose **Copy “webdev” as Pathname**.
 
 Replace **PASTE_FULL_PATH_TO_WEBDEV_HERE** with that path. Keep the quotes, then run:
 
+> **Where to paste:** VS Code terminal · **Zsh or Bash**
+
 ```bash
 cd "PASTE_FULL_PATH_TO_WEBDEV_HERE"
 ```
 
 **If cd reports an error, fix the path before continuing.** Then copy both checks together:
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash** · in **webdev**
 
 ```bash
 pwd
@@ -89,6 +92,8 @@ ls
 
 For a **new app**, run:
 
+> **Where to paste:** VS Code terminal · **Zsh or Bash** · in **webdev**
+
 ```bash
 npx create-next-app@latest ohana-link --use-npm
 ```
@@ -102,15 +107,17 @@ If **ohana-link** already exists but is not a working app, ask for help before c
 
 ## 3. Run the app
 
-**Where: The same VS Code terminal, currently in webdev**
-
 Enter your app folder:
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash** · in **webdev**
 
 ```bash
 cd ohana-link
 ```
 
 After it succeeds, start the server:
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash** · in **your app folder**
 
 ```bash
 npm run dev
@@ -141,11 +148,15 @@ New apps already have their packages. For an existing app without **node_modules
 
 If **package-lock.json** exists, run:
 
+> **Where to paste:** VS Code terminal · **Zsh or Bash** · in **your app folder**
+
 ```bash
 npm ci
 ```
 
 If there is no **package-lock.json**, use this instead:
+
+> **Where to paste:** VS Code terminal · **Zsh or Bash** · in **your app folder**
 
 ```bash
 npm install

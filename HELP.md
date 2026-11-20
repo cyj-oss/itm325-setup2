@@ -14,6 +14,8 @@ If the command still fails, share the command and the exact error with your inst
 
 Use **npm.cmd** instead of **npm**, and **npx.cmd** instead of **npx**.
 
+> **Where to paste:** VS Code terminal · **PowerShell**
+
 ```powershell
 npm.cmd --version
 ```
@@ -43,7 +45,7 @@ Use this only if the helper cannot finish and you do not use a Node version mana
 
 1. Open the [official Git for Windows page](https://git-scm.com/install/windows) and download the installer for your system type.
 2. Complete the installer. Choose VS Code as the editor if asked. Keep Git available from the command line and third-party software.
-3. Reopen VS Code and a new terminal. Run `git --version`. When a version appears, continue with [GitHub account setup](GITHUB.md#2-create-or-use-your-github-account).
+3. Reopen VS Code and a new terminal. Run `git --version`. When a version appears, continue with [GitHub account setup](GITHUB-WINDOWS.md#2-create-or-use-your-github-account).
 
 ## Mac Git does not start
 
@@ -53,7 +55,9 @@ If the tools are already installed but Git reports an invalid developer path, ch
 
 ## Git shows the wrong name or email
 
-In your project folder, run:
+Copy both checks together and run them:
+
+> **Where to paste:** VS Code terminal · **PowerShell on Windows / Zsh or Bash on Mac** · in **your project folder**
 
 ```text
 git config --show-origin --get user.name
@@ -67,6 +71,8 @@ These show which settings file supplies each value. A project-specific value ove
 Keep `node_modules/`, `.next/`, and `.env*` in your project's **.gitignore**. Review Source Control again. Use the **minus** button to unstage an unwanted file without deleting it.
 
 If a file was already committed, adding it to .gitignore does not stop Git tracking it. For an already tracked **.env.local**, run this from the project folder:
+
+> **Where to paste:** VS Code terminal · **PowerShell on Windows / Zsh or Bash on Mac** · in **your project folder**
 
 ```text
 git rm --cached -- .env.local
