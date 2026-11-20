@@ -36,8 +36,8 @@ Create the project and wait. If the free plan cannot create another project, ask
 
 Under **Add files**, select the **.env.local** tab. It shows two lines:
 
-- **NEXT_PUBLIC_SUPABASE_URL** — your Project URL.
-- **NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY** — your publishable key.
+- **`NEXT_PUBLIC_SUPABASE_URL`** — your Project URL.
+- **`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`** — your publishable key.
 
 Keep this tab open. You will copy these lines in **Step 3B** below.
 
